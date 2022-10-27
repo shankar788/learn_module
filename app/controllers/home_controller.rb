@@ -1,12 +1,13 @@
-class HomeController < ApplicationController
-  include Student   # This class defined in - model/concern/student.rb  
-  require './lib/modules/trashable' # using lib/module/trashable
-  include Trashable  # using lib/module/trashable
+include Student   # This class defined in - model/concern/student.rb  
+require './lib/modules/trashable' # using lib/module/trashable
 
+class HomeController < ApplicationController
+  # using lib/module/trashable
+  include Trashable 
  
   
   def index
-    msg
+    Trashable.print
   end
 
   def demo
